@@ -17,7 +17,216 @@
 <title>OverTheWire</title>
 {% endif %}
 </head>
-<body>
+<<body class="dark">
+  <div>
+    <header>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-primary">
+      <a href="/" class="logo">
+        <img alt="Hacktoberfest Logo" class="nav-logo">
+      </a>
+      <ul class="navbar-links">
+        <li><a class=" navLink" href="/">home</a></li>
+        <li><a class=" navLink" href="/details">resources</a></li>
+        <li class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <a class=" navLink" href="/events">
+              Events
+              <small>▼</small>
+</a>          </div>
+          <div class="dropdown-menu" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a class="dropdown-item navLink" href="/events">View All Events</a>
+              <hr class="dropdown-divider">
+              <a class="dropdown-item navLink" href="/eventkit">Event Organizer Kit</a>
+            </div>
+          </div>
+        </li>
+        <li><a class=" navLink" href="/faq">faq</a></li>
+        <li>
+            <a class="active navLink" href="/profile">profile</a>
+        </li>
+      </ul>
+    </div>
+    <div class="toggle">
+      <p>Dark Mode </p>
+      <label class="toggle-switch">
+        <input id="toggle-checkbox" type="checkbox" onclick="
+            localStorage.setItem('mode', (localStorage.getItem('mode') || 'light') === 'light' ? 'dark' : 'light'); 
+            localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark');
+            " title="Dark/light">
+          <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </nav>
+</header>
+<script>
+// after turbolinks finishes loading check localStorage mode and check the toggle if it needs to be darkmode
+document.addEventListener("turbolinks:load", ()=> {
+  if(localStorage.getItem('mode') === 'dark') document.getElementById('toggle-checkbox').checked = true
+});
+</script>
+
+    <div class="profile-page">
+  <div class="profile-left">
+    <div class="main-content-wrapper">
+      <div class="account-wrapper">
+        <span>
+          <div class="avatar">
+            <figure class="image">
+              <img class="is-rounded" src="https://github.com/harshwardhan9981.png?size=150">
+            </figure>
+          </div>
+          <h2 class="username title is-2">harshwardhan9981 </h2>
+        </span>
+        <div class="logout-wrapper">
+          <a class="logout" href="/logout">Log out @harshwardhan9981</a>
+        </div>
+      </div>
+
+      <div class="progress-wrapper mobile">
+        <h4 class="progress-header">your progress</h4>
+        <div class="pr-score">0 of 4 pull requests</div>
+<div class="progress-bar progress-state-0">
+  <div class="progress-block"></div>
+  <div class="progress-block"></div>
+  <div class="progress-block"></div>
+  <div class="progress-block"></div>
+</div>
+
+      </div>
+      
+        <div class="container pre-launch-container">
+          <h2 class="title is-2">You haven't made any pull requests yet.</h2>
+          <a anchor="getting-started" class="button-static" href="/details">Get started</a>
+        </div>
+
+      <div class="hacktoberfest-results-box">
+      </div>
+      <div class="container">
+        <div class="timeline-container">
+</div>
+
+      </div>
+    </div>
+
+    <div class="main-content-wrapper">
+      <p>Have you seen a repository that you don't think aligns with the <a href="/details">Hacktoberfest values</a>? Please <a href="/report">report it to us</a> so we can take a look.</p>
+    </div>
+  </div>
+
+  <div class="profile-right">
+    <div class="progress-wrapper desktop">
+      <h4 class="progress-header">your progress</h4>
+      <div class="pr-score">0 of 4 pull requests</div>
+<div class="progress-bar progress-state-0">
+  <div class="progress-block"></div>
+  <div class="progress-block"></div>
+  <div class="progress-block"></div>
+  <div class="progress-block"></div>
+</div>
+
+    </div>
+    <div class="education-wrapper">
+      <h4 class="side-headers">education hub</h4>
+      <div class="education-section">
+        <h5>Educate Yourself</h5>
+        <ul>
+          <li><a href="https://www.digitalocean.com/community/tutorial_series/an-introduction-to-open-source" target="_blank">Get An Introduction to Open Source</a></li>
+          <li><a href="https://hacktoberfest.digitalocean.com/details/" target="_blank">Digest the Resources</a></li>
+          <li><a href="https://hacktoberfest.digitalocean.com/faq/" target="_blank">Get Answers Before Asking</a></li>
+          <li><a href="https://www.digitalocean.com/community/tutorials/how-to-maintain-open-source-software-projects" target="_blank">Learn About Maintainer Experience</a></li>
+        </ul>
+      </div>
+      <div class="education-section">
+        <h5>Make An Impact</h5>
+        <ul>
+          <li><a href="https://hacktoberfest.digitalocean.com/eventkit/" target="_blank">Organize a Hacktoberfest Meetup</a></li>
+          <li><a href="https://www.digitalocean.com/community/meetup_kits/hacktoberfest-workshop-kit-how-to-submit-your-first-pull-request-on-github" target="_blank">Lead an Open Source Workshop</a></li>
+          <li><a href="https://dev.to/" target="_blank">Share Your Experience on DEV</a></li>
+          <li><a href="https://raise.dev/hacktoberfest" target="_blank">Apply to Become a Coach</a></li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+  </div>
+  <footer class="footer">
+      <div class="footer-wrapper">
+      <div class="do-logo">
+        <a href="https://www.digitalocean.com">
+          <img alt="DigitalOcean Logo" class="footer-do-logo">
+        </a>
+      </div>
+
+      <div class="footer-details">
+        <p class="footer-p">
+          © 2020 DigitalOcean, LLC. All rights reserved.
+        </p>
+        <ul class="footer-links">
+          <li>
+            <a href="https://www.digitalocean.com/legal/terms-of-service-agreement/">
+              Terms
+            </a>
+          </li>
+          <li>
+            <a href="https://www.digitalocean.com/legal/privacy-policy/">
+              Privacy
+            </a>
+          </li>
+          <li>
+            <a href="https://do.co/hacktoberbrand">
+              Brand Guidelines
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/hacktoberfest">
+              <img alt="Twitter" class="footer-twitter">
+            </a>
+            <a href="https://www.instagram.com/hacktoberfest/">
+              <img alt="Instagram" class="footer-instagram">
+            </a>
+            <a href="https://discord.gg/hacktoberfest">
+              <img alt="Discord" class="footer-discord">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</footer>
+
+
+    <script type="text/javascript">
+      window.cookieDomain = ".digitalocean.com";
+    </script>
+
+  <script src="https://assets.digitalocean.com/cookieConsent/cookieConsent.js"></script>
+
+    <script>
+      window.addEventListener('cookieconsent_statuschange', function(e) {
+        if(e.detail.status === 'deny') { return; }
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KHWBBT');
+      });
+    </script>
+  
+
+
+<script type="text/javascript" id="">!function(a,b){if(!a.rdt){var c=a.rdt=function(){c.sendEvent?c.sendEvent.apply(c,arguments):c.callQueue.push(arguments)};c.callQueue=[];a=b.createElement("script");a.src="https://www.redditstatic.com/ads/pixel.js";a.async=!0;b=b.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}}(window,document);rdt("init","t2_34hog0h9");rdt("track","PageVisit");</script>
+
+
+
+
+  <script type="text/javascript" id="">var _qevents=_qevents||[];(function(){var a=document.createElement("script");a.src=("https:"==document.location.protocol?"https://secure":"http://edge")+".quantserve.com/quant.js";a.async=!0;a.type="text/javascript";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();_qevents.push({qacct:"p-ezk6DY8pwNxCt"});</script>
+
+<script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=AW-1010666955"></script>
+<script type="text/javascript" id="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","AW-1010666955");</script></body>>
 <div id="sitename"><a href="/">OverTheWire</a></div>
 <div id="siteslogan">We're hackers, and we are good-looking. We are the 1%.</div>
 <div id="topmenu">
